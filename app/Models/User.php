@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -34,7 +35,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get the attributes that should be cast.
+     * The attributes that should be cast.
      *
      * @return array<string, string>
      */
@@ -44,5 +45,39 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // ─── Relationships ────────────────────────────────────────────────
+
+    public function patient()
+    {
+        return $this->hasOne(Patient::class);
+    }
+
+    public function dentist()
+    {
+        return $this->hasOne(Dentist::class);
+    }
+
+    // ─── Role Helpers ─────────────────────────────────────────────────
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isDentist(): bool
+    {
+        return $this->role === 'dentist';
+    }
+
+    public function isReceptionist(): bool
+    {
+        return $this->role === 'receptionist';
+    }
+
+    public function isPatient(): bool
+    {
+        return $this->role === 'patient';
     }
 }
