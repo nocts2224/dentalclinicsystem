@@ -15,6 +15,7 @@
 
     @livewireScripts
 
-    @stack('scripts')
+    {{-- @stack('scripts') --}}
 </body>
 </html>
+ {{-- <livewire:page-controller /> --}}
