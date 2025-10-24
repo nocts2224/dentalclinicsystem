@@ -11,4 +11,7 @@
      focus:ring-blue-500 focus:ring-opacity-50 mt-5">Login</button>
      </div>
 
+     <button wire:click="toDashboard" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded-lg 
+    shadow-md transition duration-200 ease-in-out focus:outline-none focus:ring-2
+     focus:ring-blue-500 focus:ring-opacity-50 mt-5">test dashboard</button>
 </div>
