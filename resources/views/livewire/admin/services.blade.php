@@ -11,13 +11,13 @@
         <div class="flex justify-between items-center pb-4 border-b border-gray-200">
             <div>
                 <h2
-                    class="text-gray-900 text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                    class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
                     Services Management
                 </h2>
                 <p class="text-sm text-gray-600 mt-1">Manage dental services and pricing</p>
             </div>
             <button wire:click="openAddModal"
-                class="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-xl flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                class="group bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-6 py-3 rounded-xl flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     class="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
@@ -70,7 +70,7 @@
                             <div class="w-px h-8 bg-gray-200"></div>
                             <div>
                                 <p class="text-xs text-gray-500">Price</p>
-                                <p class="text-sm text-gray-900">${{ $service['price'] }}</p>
+                                <p class="text-sm text-gray-900">₱{{ $service['price'] }}</p>
                             </div>
                         </div>
 
@@ -84,9 +84,10 @@
         </div>
 
         <!-- Add/Edit Modal -->
-        @if($isAddModalOpen || $selectedService)
+        @if ($isAddModalOpen || $selectedService)
             <div class="fixed inset-0 flex items-center justify-center z-50 p-4 animate-fade-in overflow-y-auto">
-                <div class="bg-black/60 backdrop-blur-sm fixed inset-0" wire:click="$set('isAddModalOpen', false)"></div>
+                <div class="bg-black/60 backdrop-blur-sm fixed inset-0" wire:click="$set('isAddModalOpen', false)">
+                </div>
 
                 <div
                     class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-3xl my-8 z-10 animate-slide-in-bottom border border-gray-200 relative">
@@ -119,31 +120,31 @@
                                 <input type="number" wire:model="duration"
                                     class="block w-full border-2 border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 px-3 py-2 text-sm transition-all">
                             </div> --}}
-                            <div>
-                                <label class="block text-sm font-semibold text-gray-700 mb-1">Price ($)</label>
-                                <input type="number" wire:model="price"
-                                    class="block w-full border-2 border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 px-3 py-2 text-sm transition-all">
-                            </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Price ($)</label>
+                            <input type="number" wire:model="price"
+                                class="block w-full border-2 border-gray-200 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 px-3 py-2 text-sm transition-all">
                         </div>
+                    </div>
 
-                        <div class="flex items-center space-x-2 mt-2">
-                            <input type="checkbox" wire:model="isActive" id="isActive" class="accent-blue-600">
-                            <label for="isActive" class="text-sm text-gray-700 font-medium">Active</label>
-                        </div>
+                    <div class="flex items-center space-x-2 mt-2">
+                        <input type="checkbox" wire:model="isActive" id="isActive" class="accent-blue-600">
+                        <label for="isActive" class="text-sm text-gray-700 font-medium">Active</label>
+                    </div>
 
-                        <div class="flex justify-end space-x-3 pt-4 border-t border-gray-200">
-                            <button wire:click="cancelEdit"
-                                class="px-5 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 font-semibold text-gray-700 text-sm transition-all duration-300 transform hover:scale-105">
-                                Cancel
-                            </button>
+                    <div class="flex justify-end space-x-3 pt-4 border-t border-gray-200">
+                        <button wire:click="cancelEdit"
+                            class="px-5 py-2 rounded-lg border-2 border-gray-300 hover:bg-gray-50 font-semibold text-gray-700 text-sm transition-all duration-300 transform hover:scale-105">
+                            Cancel
+                        </button>
 
-                            <button wire:click="saveService"
-                                class="px-5 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">{{ $selectedService ? 'Save Changes' : 'Add Service' }}</button>
-                        </div>
+                        <button wire:click="saveService"
+                            class="px-5 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">{{ $selectedService ? 'Save Changes' : 'Add Service' }}</button>
                     </div>
                 </div>
             </div>
-        @endif
-
     </div>
+    @endif
+
+</div>
 </div>
