@@ -10,7 +10,8 @@
     <div class="max-w-7xl mx-auto p-6 space-y-6 bg-white rounded-2xl mt-5 shadow-md">
         <div class="flex justify-between items-center">
             <div>
-                <h2 class="text-gray-900 text-xl font-semibold">Patient Management</h2>
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text
+                text-transparent">Patient Management</h2>
                 <p class="text-sm text-gray-500">Manage and view all patient records</p>
             </div>
 

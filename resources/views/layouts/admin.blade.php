@@ -7,7 +7,6 @@
     <link rel="icon" href="{{ asset('icons/logo.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-    
     <style>
         @keyframes fade-in {
             from { opacity: 0; }

@@ -20,6 +20,7 @@ use App\Livewire\Admin\Treatments;
 use App\Livewire\Admin\Services as AdminServices;
 use App\Livewire\Admin\Dentists;
 use App\Livewire\Admin\Settings;
+use App\Livewire\Admin\Invoices;
 
 // Public routes
 Route::get('/', HomePage::class);
@@ -28,7 +29,6 @@ Route::get('/clients', Clients::class);
 Route::get('/locations', Locations::class);
 Route::get('/services', PublicServices::class);
 Route::get('/appointment', PublicAppointments::class);
-
 Route::get('/login', Login::class);
 
 // Admin routes -
@@ -55,6 +55,11 @@ Route::get('/admin/services', AdminServices::class)
 Route::get('/admin/dentists', Dentists::class)
     ->middleware(['auth', 'admin'])
     ->name('admin.dentists');
+
+//unfinished
+// Route::get('/admin/invoices', Invoices::class)
+//     ->middleware(['auth', 'admin'])
+//     ->name('admin.invoices');
 
 Route::get('/admin/settings', Settings::class)
     ->middleware(['auth', 'admin'])
