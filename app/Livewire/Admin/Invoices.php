@@ -8,6 +8,6 @@ class Invoices extends Component
 {
     public function render()
     {
-        return view('livewire.admin.invoices')->layout('admin.layouts');
+        return view('livewire.admin.invoices')->layout('layouts.admin');
     }
 }

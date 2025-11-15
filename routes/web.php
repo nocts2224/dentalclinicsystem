@@ -57,9 +57,9 @@ Route::get('/admin/dentists', Dentists::class)
     ->name('admin.dentists');
 
 //unfinished
-// Route::get('/admin/invoices', Invoices::class)
-//     ->middleware(['auth', 'admin'])
-//     ->name('admin.invoices');
+Route::get('/admin/invoices', Invoices::class)
+    ->middleware(['auth', 'admin'])
+    ->name('admin.invoices');
 
 Route::get('/admin/settings', Settings::class)
     ->middleware(['auth', 'admin'])
